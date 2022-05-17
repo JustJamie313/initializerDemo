@@ -4,19 +4,32 @@
     <meta charset="UTF-8"/>
     <title>SpringBoot/Thymeleaf/Javascript Demo</title>
     <link rel="stylesheet" th:href="@{demo.css}"/>
+
+<!--Use Thymeleaf to add javascript source file-->
     <script th:src="@{demo.js}"></script>
 </head>
 <body>
 <h1>Springboot/Thymeleaf/Javascript Demo</h1>
 
+<!--Output demoData received from Controller(Java)-->
 <p th:text="${demoData}">Placeholder Text</p>
 <ul>From Java
+
+<!--Loop through demoList-->
     <th:block th:each="listItem:${demoList}">
+
+<!--Add <li> for each item in list-->
         <li th:text="${listItem}">Placeholder Text</li>
     </th:block>
 </ul>
+
+<!--Create element to display Javascript demoData output-->
 <p id="jsReturnData" th:data-demo="${demoData}" >Placeholder Text</p>
+
+<!--Create element to display Javascript demoList output-->
 <ul id="jsReturnList" th:data-list="${demoList}">From Javascript</ul>
+
+<!--Create button to call runDemo() function (Javascript)-->
 <button onclick="runDemo()")>Click Me</button>
 </body>
 </html>
