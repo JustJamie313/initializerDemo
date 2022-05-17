@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>SpringBoot/Thymeleaf/Javascript Demo</title>
+    <link rel="stylesheet" th:href="@{demo.css}"/>
+</head>
+<body>
+<h1>Springboot/Thymeleaf/Javascript Demo</h1>
+
+<p th:text="${demoData}">Placeholder Text</p>
+<ul>
+    <th:block th:each="listItem:${demoList}">
+        <li th:text="${listItem}"></li>
+    </th:block>
+</ul>
+</body>
+</html>
