@@ -4,15 +4,19 @@
     <meta charset="UTF-8"/>
     <title>SpringBoot/Thymeleaf/Javascript Demo</title>
     <link rel="stylesheet" th:href="@{demo.css}"/>
+    <script th:src="@{demo.js}"></script>
 </head>
 <body>
 <h1>Springboot/Thymeleaf/Javascript Demo</h1>
 
 <p th:text="${demoData}">Placeholder Text</p>
-<ul>
+<ul>From Java
     <th:block th:each="listItem:${demoList}">
-        <li th:text="${listItem}"></li>
+        <li th:text="${listItem}">Placeholder Text</li>
     </th:block>
 </ul>
+<p id="jsReturnData" th:data-demo="${demoData}" >Placeholder Text</p>
+<ul id="jsReturnList" th:data-list="${demoList}">From Javascript</ul>
+<button onclick="runDemo()")>Click Me</button>
 </body>
 </html>

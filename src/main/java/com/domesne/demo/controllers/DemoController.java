@@ -12,9 +12,9 @@ public class DemoController {
     @GetMapping
     public String runDemo(Model model){
         List<String> demoList = new ArrayList<>();
-        demoList.add("Demo List 1");
-        demoList.add("Demo List 2");
-        demoList.add("Demo List 3");
+        demoList.add("Java List 1");
+        demoList.add("Java List 2");
+        demoList.add("Java List 3");
         model.addAttribute("demoData","This string and list are passed from Java Controller");
         model.addAttribute("demoList",demoList);
         return "demo";
